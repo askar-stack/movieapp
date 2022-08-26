@@ -5,7 +5,9 @@ import { useEffect } from "react";
 const App = () => {
   const [counter, setCounter] = useState(0);
 
-  useEffect(() => {});
+  useEffect(() => {
+    setCounter(100);
+  }, []);
 
   return (
     <div className="App">

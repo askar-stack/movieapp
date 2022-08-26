@@ -149,3 +149,49 @@ takes a callback function like setter functions
 ```js
 useEffect(() => {});
 ```
+
+useEffect code runs everytime the page reloads. so if you have an alert , it will display each time the site reloads - bc of component re-rendering.
+
+lets say u wanted to change counter to equal 100 right when the page loads
+
+you could do
+
+```js
+useEffect(() => {
+  counter = 100; //forbidden and won't work
+});
+```
+
+but don't, should never change state manually! only setter functions should be used.
+
+better way :
+
+```js
+useEffect(() => {
+  setCounter(100);
+});
+```
+
+but now useEffect is happening too often that it looks like the thing didn't change. (click fast it does try to change before going back to 100)
+
+so need to pass in second arg for useEffect, the dependency array.
+
+now can modify it, because will only run on inital load of the site/component.
+
+without dependency array, infinite loop of updates.
+
+```js
+useEffect(() => {
+  setCounter(100);
+}, []);
+```
+
+if we put counter inside in the dependency array, the site updates everytime counter changes
+
+not user friendly but for checking when a variable changes, this is what useEffect can be good for. like running an alert when counter changes
+
+```js
+useEffect(() => {
+  alert("You changed the counter to" + counter);
+}, [counter]);
+```
