@@ -195,3 +195,5 @@ useEffect(() => {
   alert("You changed the counter to" + counter);
 }, [counter]);
 ```
+
+just like you have to import to use things, have to export them so they can be used elsewhere
