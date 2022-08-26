@@ -58,3 +58,94 @@ const App = () => {
   );
 };
 ```
+
+to have two elements rendered, they need to be enclosed inside a component
+and react fragment is a nameless component. just opening and closing brackets
+
+```js
+<>
+  <h1>test</h1>
+  <h2>there is no name</h2>
+</>
+```
+
+some real-life use for this kind of code is checking if user is logged in, if not show sign in page if yes show login page
+
+can create component then use it inside another, and even show it multiple times to save re-typing.
+
+```js
+<Person />
+<Person />
+<Person />
+```
+
+but what if you wanted each instance of Person to have different data?
+
+props allow you to pass dynamic data into react components. they are just arguments like u pass args in functions
+
+but bc we only defined for the first <Person> component what name was, the other remain blank
+
+```js
+const Person = (props) => {
+  return (
+    <>
+      <h1>Name: {props.name}</h1>
+      <h2>Last: Doe</h2>
+      <h2>Age: 30</h2>
+    </>
+  );
+};
+
+const App = () => {
+  const name = "John";
+  const isNameShowing = true;
+  return (
+    <div className="App">
+      <Person name={"John"} />
+      <Person />
+      <Person />
+
+```
+
+also whether its a variable name or just a String, props have to be inside curly braces. like name={}. well not really for strings name="" is fine.
+and also when using them like <div>{props.name}</div>
+
+now to talk about state in react
+state - represents info about component's current situation. managed by that component itself
+
+scenario for purpose of state, using a counter
+
+import useState hook from react.
+create buttons and place for number using tags
+
+```js
+const [counter, setCounter] = useState(0);
+```
+
+by the way that's array destructuring, es6 stuff
+
+const [thingToKeepStateOf, setterFunctiontoChangeState] = useState(init state value)
+
+event - system generated or user did something, like mouseclick or scroll
+
+```js
+      <button onClick={() => setCounter((prevCount) => prevCount - 1)}>
+```
+
+also convention to use prevState as name when changing it.
+
+onClick has callback, which calls setcounter, and we defined it to decrement by 1
+
+when clicking the + or - buttons, we are changing the state. re-rendering the view. but the website doesn't need to reload - see the url not altering?
+
+this is the same for complex sites, updating a lot of stuff on the page without the need for a page reload.
+
+there are many other react hooks. useState was needed to set and change state.
+
+userEffect - second most used
+import at the top
+takes a callback function like setter functions
+
+```js
+useEffect(() => {});
+```
