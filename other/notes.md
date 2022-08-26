@@ -28,3 +28,33 @@ inside this div is where react inserts everything we do
 JSX - className for classes.inside curly braces can write pure JS and will be convert answer.
 
 <p>{2+2}</p> works.
+
+removing the default stuff and converting to arrow function component:
+
+```js
+import "./App.css";
+
+const App = () => {
+  return (
+    <div className="App">
+      <h1>Hello React</h1>
+    </div>
+  );
+};
+
+export default App;
+```
+
+depending on the value of something true or false, can control what shows on the page:
+
+```js
+const App = () => {
+  const name = "John";
+  const isNameShowing = true;
+  return (
+    <div className="App">
+      <h1>Hello {isNameShowing ? name : "someone"}</h1>
+    </div>
+  );
+};
+```
