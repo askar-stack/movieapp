@@ -221,3 +221,7 @@ const root = createRoot(document.getElementById("root"));
 and then render your root app:
 
 root.render(<YourApp />);
+
+App.css copied over as well as search svg. import them to app.js
+
+copy object from console, console.log used to see what api returns. then copy it. now you know the format and can put variables there for dynamic data
