@@ -241,3 +241,31 @@ const MovieCard = ({movie1}) => {
 then replace that whole div with the imported moviecard component, and remember to pass that prop of movie1
 
 <MovieCard movie1={movie1} />
+
+can import both use state and useffect
+import { useEffect, useState } from "react";
+
+don't want page to reload each time they search for a new movie. so that function goes inside useEffect:
+
+```js
+useEffect(() => {
+  searchMovies("Spiderman");
+}, []);
+```
+
+optional chaining used, SO answer about it
+
+Its the "optional chainging" operator.
+
+Here an use case:
+
+```js
+let obj = {};
+
+console.log(obj?.person?.age);
+console.log(obj.person.age);
+```
+
+It comes handy if you try to access an property that not there. Its undefined so you get the error cannot get xx of undefined
+
+To prevent this error you put an ?. infront of it, it will return an undefined back rather then throwing an error
