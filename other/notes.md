@@ -225,3 +225,19 @@ root.render(<YourApp />);
 App.css copied over as well as search svg. import them to app.js
 
 copy object from console, console.log used to see what api returns. then copy it. now you know the format and can put variables there for dynamic data
+
+so made a jsx file for MovieCard component and copied everything inside div with classname movie.
+
+problem is movie1 object isn't in this file. we will pass that in with props
+
+const MovieCard = (props) => {
+
+but then would need to change every instance of movie1 with props.movie1
+
+instead can use object destructuring to get the stuff we want from props
+
+const MovieCard = ({movie1}) => {
+
+then replace that whole div with the imported moviecard component, and remember to pass that prop of movie1
+
+<MovieCard movie1={movie1} />
