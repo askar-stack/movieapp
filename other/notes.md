@@ -298,3 +298,14 @@ map is like a loop so we keep rendering a moviecard component per array element
 this is called mapping react components
 
 there's no limit for how many states and useEffects one component can have
+
+          onChange={(e) => setSearchTerm(e.target.value)}
+
+e.target.value, event object this retrieved the value of that element like what was placed inside an input field before button click.
+
+when search button is clicked, send search term to function searchMovies, which updates movie array object
+
+```js
+          onClick={() => searchMovies(searchTerm)}
+
+```
