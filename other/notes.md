@@ -269,3 +269,32 @@ console.log(obj.person.age);
 It comes handy if you try to access an property that not there. Its undefined so you get the error cannot get xx of undefined
 
 To prevent this error you put an ?. infront of it, it will return an undefined back rather then throwing an error
+
+why we linked to via.placeholder.com for not available images
+
+What Is Placeholder.com? Placeholder.com generates custom placeholder images on the fly
+
+C/O https://placeholder.com/
+
+from the data we console logged, each movies data, is an element in an array,
+so movies is
+movies {
+[movie one stuff, object key value pairs],
+[movie two stuff, obj key value pairs]
+}
+
+so we map thru each movie, and send it to MovieCard.
+
+```js
+<div className="container">
+  {movies.map((movie) => (
+    <MovieCard movie={movie} />
+  ))}{" "}
+</div>
+```
+
+map is like a loop so we keep rendering a moviecard component per array element
+
+this is called mapping react components
+
+there's no limit for how many states and useEffects one component can have
