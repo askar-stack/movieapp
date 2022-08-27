@@ -197,3 +197,27 @@ useEffect(() => {
 ```
 
 just like you have to import to use things, have to export them so they can be used elsewhere
+
+# starting the proj
+
+index js has react dom, and u import app.js there. and render app.js there as well
+
+curly brackets matter:
+import {useEffect} from "react";
+or will get typeError react webpack imported module etc
+
+react 18 warning how to use root, reactDOM is deprecated
+
+2
+
+In React 18, is needed to:
+
+import { createRoot } from 'react-dom/client';
+
+creates your root container with this function:
+
+const root = createRoot(document.getElementById("root"));
+
+and then render your root app:
+
+root.render(<YourApp />);
